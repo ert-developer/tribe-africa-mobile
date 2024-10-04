@@ -14,5 +14,6 @@ module.exports = [
       'prettier/prettier': 'error',
       semi: ['warn', 'always'],
     },
+    parser: 'babel-eslint',
   },
 ];
