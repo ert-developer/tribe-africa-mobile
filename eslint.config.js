@@ -1,17 +1,28 @@
-import mantine from 'eslint-config-mantine';
-import tseslint from 'typescript-eslint';
-import reactHooks from 'eslint-plugin-react-hooks';
-
-export default tseslint.config(
-  ...mantine,
-
-  { ignores: ['**/*.{mjs,cjs,js,d.ts,d.mts}', './.storybook/main.ts'] },
-  {
-    plugins: {
-      'react-hooks': reactHooks,
+module.exports = {
+  root: true,
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    rules: {
-      ...reactHooks.configs.recommended.rules,
+    ecmaVersion: 2021,
+    sourceType: 'module',
+  },
+  settings: {
+    react: {
+      version: 'detect',
     },
-  }
-);
+  },
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  rules: {
+    // For example:
+    'react/react-in-jsx-scope': 'off', // Allows JSX without importing React
+    'react/prop-types': 'off', // Disable prop-types validation (or configure as needed)
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+  },
+};
