@@ -14,7 +14,6 @@ module.exports = [
       'prettier/prettier': 'error',
       semi: ['warn', 'always'],
       'no-duplicate-imports': 'error',
-      'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }],
       'react/jsx-fragments': ['error', 'element'],
       'react/self-closing-comp': 'error',
       'react/no-array-index-key': 'error',
