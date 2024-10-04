@@ -3,7 +3,7 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 
 const compat = new FlatCompat({
-  baseDirectory: import.meta.url, // required for extending configs in flat config
+  baseDirectory: import.meta.url,
 });
 
 export default [
@@ -23,11 +23,11 @@ export default [
       'react-hooks': reactHooks,
     },
     rules: {
-      'react/react-in-jsx-scope': 'off', // No need for React import in JSX
-      'react/prop-types': 'off', // Disable prop-types validation
-      'react-hooks/rules-of-hooks': 'error', // Check rules of Hooks
-      'react-hooks/exhaustive-deps': 'warn', // Check effect dependencies
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
     },
   },
-  ...compat.extends('eslint:recommended', 'plugin:react/recommended'), // Use ESLint and React recommended rules
+  ...compat.extends('eslint:recommended', 'plugin:react/recommended'),
 ];
