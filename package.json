@@ -57,6 +57,7 @@
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^5.1.0-rc-1460d67c-20241003",
     "husky": "^8.0.0",
     "jest": "^29.2.1",
     "jest-expo": "~51.0.3",
