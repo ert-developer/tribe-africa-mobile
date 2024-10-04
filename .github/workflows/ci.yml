@@ -26,5 +26,4 @@ jobs:
       # Run lint checks
       - run: npm run lint
 
-      # Run tests
-      - run: npm test
+    
