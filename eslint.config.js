@@ -1,11 +1,11 @@
-import js from '@eslint/js';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactNative from 'eslint-plugin-react-native';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import globals from 'globals';
+const js = require('@eslint/js');
+const react = require('eslint-plugin-react');
+const reactHooks = require('eslint-plugin-react-hooks');
+const reactNative = require('eslint-plugin-react-native');
+const typescriptEslint = require('@typescript-eslint/eslint-plugin');
+const globals = require('globals');
 
-export default [
+module.exports = [
   {
     files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
     languageOptions: {
