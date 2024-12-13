@@ -14,13 +14,13 @@ export default function TabLayout() {
                 backgroundColor: theme.colors.secondary,
                 borderRadius: 10,
                 height: 75,
-                paddingHorizontal: theme.padding.small,
-                margin: theme.padding.small
+                paddingHorizontal: theme.spacing.small,
+                margin: theme.spacing.small
             },
             tabBarActiveBackgroundColor: '#fff',
             tabBarItemStyle: {
-                margin: theme.margin.extraSmall,
-                marginVertical: theme.margin.small,
+                margin: theme.spacing.extraSmall,
+                marginVertical: theme.spacing.small,
                 borderRadius: 10,
                 overflow: 'hidden',
             },
@@ -31,7 +31,7 @@ export default function TabLayout() {
                     display: 'flex',
                     flexDirection: 'row',
                     gap: theme.spacing.small,
-                    marginLeft: theme.margin.small,
+                    marginLeft: theme.spacing.small,
                 }}
             >
                 <Iconify icon="calculator"/>
@@ -44,7 +44,7 @@ export default function TabLayout() {
                     display: 'flex',
                     flexDirection: 'row',
                     gap: theme.spacing.small,
-                    marginRight: theme.margin.small,
+                    marginRight: theme.spacing.small,
                 }}
             >
                 <Iconify icon="flights"/>
