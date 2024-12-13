@@ -1,37 +1,96 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Text, View } from "react-native";
+import { Tabs } from "expo-router";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import Iconify from "@/components/iconify";
+
+import {theme} from '@/constants/theme';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs screenOptions={{
+            headerTitle: () => <Text>Tribe Africa</Text>,
+            headerTitleAlign: 'center',
+            tabBarStyle: {
+                backgroundColor: theme.colors.secondary,
+                borderRadius: 10,
+                height: 75,
+                paddingHorizontal: theme.padding.small,
+                margin: theme.padding.small
+            },
+            tabBarActiveBackgroundColor: '#fff',
+            tabBarItemStyle: {
+                margin: theme.margin.extraSmall,
+                marginVertical: theme.margin.small,
+                borderRadius: 10,
+                overflow: 'hidden',
+            },
+            tabBarActiveTintColor: theme.colors.primary,
+            headerLeft: () => (
+            <View
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap: theme.spacing.small,
+                    marginLeft: theme.margin.small,
+                }}
+            >
+                <Iconify icon="calculator"/>
+                <Iconify icon="notifications"/>
+            </View>
+            ),
+            headerRight: () => (
+            <View
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap: theme.spacing.small,
+                    marginRight: theme.margin.small,
+                }}
+            >
+                <Iconify icon="flights"/>
+                <Iconify icon="accomodations"/>
+            </View>
+            ),
+        }}>
+            <Tabs.Screen 
+                name="home/index" 
+                options={{ 
+                    tabBarLabel: 'Home',
+                    tabBarIcon: ({focused}) => <Iconify icon={focused ? 'home' : 'home-outline'}/>,
+                }}
+            />
+            <Tabs.Screen 
+                name="business/index" 
+                options={{ 
+                    headerShown: false,
+                    tabBarLabel: 'Business',
+                    tabBarIcon: ({focused}) => <Iconify icon={focused ? 'business' : 'business-outline'} />,
+                }}
+            />
+            <Tabs.Screen 
+                name="holiday/index" 
+                options={{ 
+                    headerShown: false,
+                    tabBarLabel: 'Holiday',
+                    tabBarIcon: ({focused}) => <Iconify icon={focused ? 'holiday' : 'holiday-outline'} />,
+                }}
+            />
+            <Tabs.Screen 
+                name="chatbot/index" 
+                options={{ 
+                    headerShown: false,
+                    tabBarLabel: 'Chatbot',
+                    tabBarIcon: ({focused}) => <Iconify icon={focused ? 'chatbot' : 'chatbot-outline'} />,
+                }}
+            />
+            <Tabs.Screen 
+                name="profile/index" 
+                options={{ 
+                    headerShown: false,
+                    tabBarLabel: 'Profile',
+                    tabBarIcon: ({focused}) => <Iconify icon={focused ? 'profile' : 'profile-outline'} />,
+                }}
+            />
+        </Tabs>
+    )
 }
