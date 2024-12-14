@@ -6,6 +6,9 @@ export const appStyles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: theme.spacing.small,
     },
+    section: {
+        marginVertical: theme.spacing.extraSmall
+    },
     rowContainer: {
         flexDirection: 'row',
         alignItems: 'center',

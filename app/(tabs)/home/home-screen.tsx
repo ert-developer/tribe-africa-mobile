@@ -15,7 +15,7 @@ export default function HomeScreen({props}) {
       style={[appStyles.screen]}
     >
         {/* Charming Hotels */}
-        <View>
+        <View style={appStyles.section}>
             <CustomHeading>
                 <View style={[appStyles.rowContainer]}>
                     <CustomHeading.Title>
