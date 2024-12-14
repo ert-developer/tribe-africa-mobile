@@ -10,9 +10,9 @@ export const appStyles = StyleSheet.create({
         marginVertical: theme.spacing.extraSmall
     },
     rowContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: theme.spacing.small
-      },
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing.small
+    },
 })

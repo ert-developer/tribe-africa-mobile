@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, Touchable, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { theme } from '@/constants/theme';
 
-interface CardProps {
+export interface CardProps {
   data: {
+    _id: string,
     imageSource: { uri: string };
     title: string;
     description?: string;
@@ -16,7 +17,7 @@ interface CardProps {
   descriptionStyle?: object;
 }
 
-const Card: React.FC<CardProps> = ({ data, onPress, cardStyle, imageStyle, titleStyle, descriptionStyle }) => {
+const Card: React.FC<CardProps> = ({ data, onPress, cardStyle={}, imageStyle={}, titleStyle={}, descriptionStyle={} }) => {
   return (
     <TouchableOpacity style={[styles.card, cardStyle]} onPress={onPress}>
       <Image source={data.imageSource} style={[styles.cardImage, imageStyle]} />
@@ -32,7 +33,6 @@ const Card: React.FC<CardProps> = ({ data, onPress, cardStyle, imageStyle, title
 
 const styles = StyleSheet.create({
   card: {
-    
   },
   cardImage: {
     width: '100%',
