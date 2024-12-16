@@ -6,9 +6,10 @@ import { appStyles } from "@/constants/styles";
 interface CarouselProps<T> {
   data: T[];
   renderItem: (info: ListRenderItemInfo<T>) => JSX.Element;
+  showIndicators?: boolean
 }
 
-const Carousel = <T extends { _id: string }>({ data, renderItem }: CarouselProps<T>) => {
+const Carousel = <T extends { _id: string }>({ data, renderItem, showIndicators = true }: CarouselProps<T>) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const flatListRef = useRef<FlatList<T>>(null);
@@ -40,15 +41,16 @@ const Carousel = <T extends { _id: string }>({ data, renderItem }: CarouselProps
       <FlatList
         ref={flatListRef}
         horizontal
+        pagingEnabled
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={appStyles.contentContainer}
+        contentContainerStyle={[appStyles.contentContainer, {gap: 0}]}
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item._id}
         onViewableItemsChanged={onViewableItemsChanged}
         viewabilityConfig={viewabilityConfig}
       />
-      <View style={styles.indicatorContainer}>
+      { showIndicators && <View style={styles.indicatorContainer}>
         {data.map((item, index) => (
           <TouchableOpacity
             key={item._id}
@@ -59,7 +61,7 @@ const Carousel = <T extends { _id: string }>({ data, renderItem }: CarouselProps
             onPress={() => handleIndicatorPress(index)}
           />
         ))}
-      </View>
+      </View>}
     </View>
   );
 };

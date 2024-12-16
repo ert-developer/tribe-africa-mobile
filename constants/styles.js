@@ -7,7 +7,7 @@ export const appStyles = StyleSheet.create({
         paddingHorizontal: theme.spacing.small,
     },
     section: {
-        marginVertical: theme.spacing.extraSmall
+        marginVertical: theme.spacing.small
     },
     rowContainer: {
       flexDirection: 'row',

@@ -12,16 +12,19 @@ export interface CardProps {
   },
   onPress: () => void;
   cardStyle?: object;
+  imageContainerStyle?: object;
   imageStyle?: object;
   textContainerStyle?: object;
   titleStyle?: object;
   descriptionStyle?: object;
 }
 
-const Card: React.FC<CardProps> = ({ data, onPress, cardStyle={}, imageStyle={},textContainerStyle={}, titleStyle={}, descriptionStyle={} }) => {
+const Card: React.FC<CardProps> = ({ data, onPress, cardStyle={}, imageContainerStyle={}, imageStyle={},textContainerStyle={}, titleStyle={}, descriptionStyle={} }) => {
   return (
     <TouchableOpacity style={[styles.card, cardStyle]} onPress={onPress}>
-      <Image source={data.imageSource} style={[styles.cardImage, imageStyle]} />
+      <View style={imageContainerStyle}>
+        <Image source={data.imageSource} style={[styles.cardImage, imageStyle]} />
+      </View>
       <View
         style={[textContainerStyle, styles.textContainer]}
       >

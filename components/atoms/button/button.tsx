@@ -21,11 +21,14 @@ export default CustomButton;
 const styles = StyleSheet.create({
   button: {
     padding: theme.spacing.small,
+    paddingHorizontal: theme.spacing.medium,
     backgroundColor: theme.colors.primary,
     borderRadius: theme.borderRadius.small,
     alignSelf: 'flex-start'
   },
   buttonText: {
     color: theme.colors.light,
+    fontFamily: theme.fonts.poppins.semiBold,
+    fontSize: theme.fonts.fontSize.small
   },
 });
