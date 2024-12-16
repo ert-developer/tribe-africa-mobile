@@ -12,7 +12,7 @@ export default function TabLayout() {
             headerTitleAlign: 'center',
             tabBarStyle: {
                 backgroundColor: theme.colors.secondary,
-                borderRadius: 10,
+                borderRadius: theme.spacing.small,
                 height: 75,
                 paddingHorizontal: theme.spacing.small,
                 margin: theme.spacing.small
@@ -21,7 +21,7 @@ export default function TabLayout() {
             tabBarItemStyle: {
                 margin: theme.spacing.extraSmall,
                 marginVertical: theme.spacing.small,
-                borderRadius: 10,
+                borderRadius: theme.spacing.small,
                 overflow: 'hidden',
             },
             tabBarActiveTintColor: theme.colors.primary,
@@ -89,6 +89,13 @@ export default function TabLayout() {
                     headerShown: false,
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({focused}) => <Iconify icon={focused ? 'profile' : 'profile-outline'} />,
+                }}
+            />
+            {/* Hiding other screens */}
+            <Tabs.Screen 
+                name="home/home-screen" 
+                options={{
+                    href: null
                 }}
             />
         </Tabs>

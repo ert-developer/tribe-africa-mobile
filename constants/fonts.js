@@ -1,3 +1,5 @@
+// import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 export const fonts = {
     poppins: {
       black: 'Poppins-Black',
@@ -24,11 +26,19 @@ export const fonts = {
       bold: 'Rufina-Bold',
     },
     fontSize: {
-      extraSmall: 10, // Suitable for captions or small labels
-      small: 12,      // Suitable for subtitles or smaller text
-      medium: 16,     // Suitable for regular body text
-      large: 20,      // Suitable for headings
-      extraLarge: 24, // Suitable for prominent titles or larger headings
+      extraSmall: 10,
+      small: 12,    
+      medium: 16,    
+      large: 20,
+      extraLarge: 24
     }
   };
   
+  // For responsiveness
+  // fontSize: {
+  //   extraSmall: wp('2.5%'),
+  //   small: wp('3%'),
+  //   medium: wp('4%'),
+  //   large: wp('5%'),
+  //   extraLarge: wp('6%'),
+  // },

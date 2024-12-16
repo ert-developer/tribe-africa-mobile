@@ -15,4 +15,8 @@ export const appStyles = StyleSheet.create({
       justifyContent: 'space-between',
       gap: theme.spacing.small
     },
+    contentContainer: {
+      marginVertical: theme.spacing.extraSmall,
+      gap: theme.spacing.small,
+    },
 })

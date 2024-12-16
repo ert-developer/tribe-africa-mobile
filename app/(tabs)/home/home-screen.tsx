@@ -31,11 +31,13 @@ export default function HomeScreen({props}) {
             </CustomHeading>
             <FlatList
                 horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={appStyles.contentContainer}
                 data={hotelsData}
                 renderItem={data => (
                     <Card 
                         data={data.item} 
-                        cardStyle={{padding: theme.spacing.small, width: 300}} 
+                        cardStyle={{width: 300}} 
                         onPress={() => console.log('clicked' + data.item._id)}
                     />
                 )}
@@ -61,11 +63,61 @@ export default function HomeScreen({props}) {
                     <Card 
                         data={data.item} 
                         cardStyle={{
-                            padding: theme.spacing.small,
-                            width: screenWidth - theme.spacing.small
+                            width: screenWidth - 2 * theme.spacing.small
                         }} 
                         imageStyle={{
                             aspectRatio: 16/9
+                        }}
+                        onPress={() => {}}
+                    />
+                )}
+            />
+        </View>
+
+        {/* Working Remotely */}
+        <View style={[appStyles.section]}>
+            <CustomHeading>
+                <CustomHeading.Title>
+                    Great For *Working Remotely*
+                </CustomHeading.Title>
+                <CustomHeading.Description>
+                    Best Digital Nomad Destinations in africa
+                </CustomHeading.Description>
+            </CustomHeading>
+            <Carousel
+                data={hotelsData}
+                renderItem={data => (
+                    <Card 
+                        data={{...data.item, description: 'abcdefghijklmno pqrstuv wxyzabcdefghij klmnopq rstuvwxyzabc defghijklmnopqrstuvwxyz abcdefghijklmno pqrstuv wxyzabcdefghij klmnopq rstuvwxyzabc defghijklmnopqrstuvwxyz abcdefghijklmno pqrstuv wxyzabcdefghij klmnopq rstuvwxyzabc defghijklmnopqrstuvwxyz abcdefghijklmno pqrstuv wxyzabcdefghij klmnopq rstuvwxyzabc defghijklmnopqrstuvwxyz'}} 
+                        cardStyle={{
+                            width: screenWidth - 2 * theme.spacing.small,
+                            aspectRatio: 3/2,
+                            display: 'flex',
+                            flexDirection: 'row',
+                            borderRadius: theme.borderRadius.medium,
+                            borderWidth: 1/2,
+                            borderColor: theme.colors.primary,
+                            overflow: 'hidden',
+                        }} 
+                        imageStyle={{
+                            width: '40%',
+                            height: '100%',
+                            borderRadius: 0,
+                            objectFit: 'cover',
+                            aspectRatio: undefined
+                        }}
+                        textContainerStyle={{
+                            padding: theme.spacing.medium,
+                            overflow: 'hidden',
+                            marginVertical: 'auto',
+                            width: '60%'
+                        }}
+                        titleStyle={{
+                            fontWeight: 'bold',
+                        }}
+                        descriptionStyle={{
+                          flexWrap: 'wrap', 
+                          overflow: 'hidden',
                         }}
                         onPress={() => {}}
                     />
