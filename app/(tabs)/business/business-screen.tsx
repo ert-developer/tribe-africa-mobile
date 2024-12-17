@@ -1,11 +1,18 @@
+import SegmentedControl from "@/components/segmented-control";
+import { appStyles } from "@/constants/styles";
 import React from "react"
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 
-const BusinessScreen = () => {
+const BusinessScreen = ({props}) => {
+  const {
+    segments,
+  } = props;
   return (
-    <View>
-      <Text>Business Screen</Text>
-    </View>
+    <ScrollView style={[appStyles.screen]}>
+      <SegmentedControl segments={segments}>
+        <Text>Business Screen</Text>
+      </SegmentedControl>
+    </ScrollView>
   )
 };
 
