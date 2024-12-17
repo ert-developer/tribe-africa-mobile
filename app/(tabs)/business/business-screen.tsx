@@ -9,17 +9,17 @@ import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View } from "r
 const eventsList = [
   {
     _id: '1',
-    imageSource: { uri: 'https://a.storyblok.com/f/165154/1280x720/473a62377a/01_top-print-trade-shows.jpg/m/'},
+    image: 'https://a.storyblok.com/f/165154/1280x720/473a62377a/01_top-print-trade-shows.jpg/m/',
     title: 'trade shows'
   },
   {
     _id: '1',
-    imageSource: { uri: 'https://cdn.prod.website-files.com/61f29c609f84a86e418fbcfb/642539192fee17d73ff34f84_how%20to%20increase%20conference%20participation.webp'},
+    image: 'https://cdn.prod.website-files.com/61f29c609f84a86e418fbcfb/642539192fee17d73ff34f84_how%20to%20increase%20conference%20participation.webp',
     title: 'Conferences and seminars'
   },
   {
     _id: '1',
-    imageSource: { uri: 'https://hubspot.com/hs-fs/hubfs/business-networking-fi%20%281%29.jpg?width=595&height=400&name=business-networking-fi%20%281%29.jpg'},
+    image: 'https://hubspot.com/hs-fs/hubfs/business-networking-fi%20%281%29.jpg?width=595&height=400&name=business-networking-fi%20%281%29.jpg',
     title: 'Networking'
   },
 ]
