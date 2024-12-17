@@ -6,12 +6,13 @@ interface CustomButtonProps {
   children: React.ReactNode;
   onPress: () => void;
   style?: object;
+  textStyle?: object;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ children, onPress, style }) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ children, onPress, style, textStyle }) => {
   return (
     <Pressable onPress={onPress} style={[styles.button, style]}>
-      <Text style={styles.buttonText}>{children}</Text>
+      <Text style={[styles.buttonText, textStyle]}>{children}</Text>
     </Pressable>
   );
 };

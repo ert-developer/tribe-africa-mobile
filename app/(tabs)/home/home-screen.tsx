@@ -15,8 +15,7 @@ export default function HomeScreen({props}) {
     } = props;
 
   return (
-    <ScrollView
-      style={[appStyles.screen]}
+    <View
     >
         {/* Charming Hotels */}
         <View style={appStyles.section}>
@@ -272,6 +271,6 @@ export default function HomeScreen({props}) {
                 </CustomButton>
             </View>
         </View>
-    </ScrollView>
+    </View>
   );
 }
