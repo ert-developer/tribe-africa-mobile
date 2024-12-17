@@ -6,7 +6,7 @@ import { theme } from '@/constants/theme';
 export interface CardProps {
   data: {
     _id: string,
-    imageSource: { uri: string };
+    imageSource: string;
     title: string;
     description?: string;
   },
@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ data, onPress, cardStyle={}, imageContainer
   return (
     <TouchableOpacity style={[styles.card, cardStyle]} onPress={onPress}>
       <View style={imageContainerStyle}>
-        <Image source={data.imageSource} style={[styles.cardImage, imageStyle]} />
+        <Image source={{uri: data.imageSource}} style={[styles.cardImage, imageStyle]} />
       </View>
       <View
         style={[textContainerStyle, styles.textContainer]}
