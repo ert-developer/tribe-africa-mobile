@@ -12,19 +12,31 @@ export interface CardProps {
   },
   onPress: () => void;
   cardStyle?: object;
+  imageContainerStyle?: object;
   imageStyle?: object;
+  textContainerStyle?: object;
   titleStyle?: object;
   descriptionStyle?: object;
 }
 
-const Card: React.FC<CardProps> = ({ data, onPress, cardStyle={}, imageStyle={}, titleStyle={}, descriptionStyle={} }) => {
+const Card: React.FC<CardProps> = ({ data, onPress, cardStyle={}, imageContainerStyle={}, imageStyle={},textContainerStyle={}, titleStyle={}, descriptionStyle={} }) => {
   return (
     <TouchableOpacity style={[styles.card, cardStyle]} onPress={onPress}>
-      <Image source={data.imageSource} style={[styles.cardImage, imageStyle]} />
-      <View>
+      <View style={imageContainerStyle}>
+        <Image source={data.imageSource} style={[styles.cardImage, imageStyle]} />
+      </View>
+      <View
+        style={[textContainerStyle, styles.textContainer]}
+      >
         <Text style={titleStyle}>{data.title}</Text>
         { data.description && 
-          <Text style={descriptionStyle}>{data.description}</Text> 
+          <Text 
+            style={[styles.description, descriptionStyle]} 
+            numberOfLines={6} 
+            ellipsizeMode='tail'
+          >
+            {data.description}
+          </Text> 
         }
       </View>
     </TouchableOpacity>
@@ -40,6 +52,14 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderRadius: theme.borderRadius.medium
   },
+  textContainer: {
+    flexGrow: 1,
+  },
+  title: {
+  },
+  description: {
+    flexShrink: 1
+  }
 });
 
 export default Card;

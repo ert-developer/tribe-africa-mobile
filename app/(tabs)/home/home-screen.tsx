@@ -1,4 +1,4 @@
-import { FlatList, ScrollView, View } from "react-native";
+import { FlatList, View } from "react-native";
 
 import CustomHeading from "@/components/atoms/heading/heading";
 import Card from "@/components/atoms/card/card";
@@ -11,8 +11,7 @@ export default function HomeScreen({props}) {
         hotelsData
     } = props;
   return (
-    <ScrollView
-      style={[appStyles.screen]}
+    <View
     >
         {/* Charming Hotels */}
         <View style={appStyles.section}>
@@ -36,6 +35,6 @@ export default function HomeScreen({props}) {
                 keyExtractor={item => item._id}
             />
         </View>
-    </ScrollView>
+    </View>
   );
 }
