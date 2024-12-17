@@ -4,7 +4,7 @@ import SegmentedControl from "@/components/segmented-control";
 import { appStyles } from "@/constants/styles";
 import { theme } from "@/constants/theme";
 import React from "react"
-import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions } from "react-native";
 
 const eventsList = [
   {
@@ -13,12 +13,12 @@ const eventsList = [
     title: 'trade shows'
   },
   {
-    _id: '1',
+    _id: '2',
     image: 'https://cdn.prod.website-files.com/61f29c609f84a86e418fbcfb/642539192fee17d73ff34f84_how%20to%20increase%20conference%20participation.webp',
     title: 'Conferences and seminars'
   },
   {
-    _id: '1',
+    _id: '3',
     image: 'https://hubspot.com/hs-fs/hubfs/business-networking-fi%20%281%29.jpg?width=595&height=400&name=business-networking-fi%20%281%29.jpg',
     title: 'Networking'
   },
@@ -28,6 +28,7 @@ const BusinessScreen = ({props}) => {
   const {
     segments,
   } = props;
+  const screenWidth = Dimensions.get('window').width;
   return (
     <ScrollView style={[appStyles.screen]}>
       <SegmentedControl segments={segments}>
@@ -75,25 +76,19 @@ const BusinessScreen = ({props}) => {
               </CustomHeading.Button>
             </View>
           </CustomHeading>
-          <FlatList
-            data={eventsList}
-            numColumns={2}
-            contentContainerStyle={{
-              gap: theme.spacing.small
-            }}
-            columnWrapperStyle={{
-              gap: theme.spacing.small
-            }}
-            renderItem={(data) => (
+          <View style={styles.eventsGrid}>
+            {eventsList.map((item) => (
               <Card
-                data={data.item}
+                key={item._id}
+                data={item}
                 cardStyle={{
-                  flex: 1/2
+                  marginBottom: theme.spacing.small,
+                  width: screenWidth/2 - 2*theme.spacing.small
                 }}
                 onPress={() => {}}
               />
-            )}
-          />
+            ))}
+          </View>
         </View>
       </SegmentedControl>
     </ScrollView>
@@ -112,5 +107,11 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.poppins.semiBold,
     fontSize: theme.fonts.fontSize.small,
     color: theme.colors.light,
-  }
+  },
+  eventsGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: theme.spacing.small,
+    justifyContent: 'space-between',
+  },
 })
