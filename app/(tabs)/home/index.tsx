@@ -1,8 +1,5 @@
-import { useState } from "react";
 import HomeScreen from "./home-screen";
-import { ScrollView, Text, View } from "react-native";
-import { appStyles } from "@/constants/styles";
-import SegmentedControl from "@/components/segmented-control";
+import { Text } from "react-native";
 
 const hotelsData = [
   {
@@ -22,49 +19,19 @@ const hotelsData = [
   }
 ]
 
-const segments = [
-  {
-    label: 'Getting there',
-    value: 'getting-there',
-  },
-  {
-    label: 'Discover',
-    value: 'discover',
-  },
-  {
-    label: 'Events',
-    value: 'events',
-  },
-  {
-    label: 'Peace & Prosperity',
-    value: 'peace-and-prosperity',
-  },
-  {
-    label: 'Blog',
-    value: 'blog',
-  },
-]
+const segments = {
+  "Getting There": <Text>Coming Soon</Text>,
+  "Discover": <Text>Coming Soon</Text>,
+  "Events": <Text>Coming Soon</Text>,
+  "Peace & Prosperity": <Text>Coming Soon</Text>,
+  "Blog": <Text>Coming Soon</Text>,
+}
 
 export default function Index() {
-  const [segment, setSegment] = useState('');
-  function renderSegment() {
-    switch (segment) {
-      case 'getting-there': return <Text>Getting There</Text>;
-      case 'discover': return <Text>Discover</Text>;
-      case 'events': return <Text>Events</Text>;
-      case 'peace-and-prosperity': return <Text>Peace & Prosperity</Text>;
-      case 'blog': return <Text>Blog</Text>;
-      default: return <HomeScreen props={{
-        hotelsData
-      }}/>
-    }
-  }
   return (
-    <ScrollView
-      style={[appStyles.screen]}
-    >
-      <SegmentedControl fields={segments} setSegment={setSegment}/>
-      { renderSegment() }
-    </ScrollView>
+    <HomeScreen props={{
+      segments,
+      hotelsData
+    }}/>
   )
 }

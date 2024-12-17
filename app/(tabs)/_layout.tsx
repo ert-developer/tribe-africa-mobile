@@ -91,13 +91,22 @@ export default function TabLayout() {
                     tabBarIcon: ({focused}) => <Iconify icon={focused ? 'profile' : 'profile-outline'} />,
                 }}
             />
-            {/* Hiding other screens */}
-            <Tabs.Screen 
-                name="home/home-screen" 
-                options={{
-                    href: null
-                }}
-            />
+            {
+                ignore.map(tab => (
+                    <Tabs.Screen 
+                        key={tab}
+                        name={tab}
+                        options={{ 
+                            href: null
+                        }}
+                    />
+                ))
+            }
         </Tabs>
     )
 }
+
+const ignore = [
+    "home/home-screen",
+    "business/business-screen",
+]
