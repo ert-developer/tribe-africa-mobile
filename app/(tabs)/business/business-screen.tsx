@@ -145,6 +145,7 @@ const BusinessScreen = ({props}) => {
                 <Text style={{
                   flex: 1,
                   fontSize: theme.fonts.fontSize.small,
+                  fontFamily: theme.fonts.poppins.regular,
                   color: theme.colors.light,
                   marginVertical: 'auto',
                 }}>
@@ -173,7 +174,8 @@ const BusinessScreen = ({props}) => {
               <Text style={{
                 color: theme.colors.primary,
                 textDecorationLine: 'underline',
-                fontSize: theme.fonts.fontSize.small
+                fontSize: theme.fonts.fontSize.small,
+                fontFamily: theme.fonts.poppins.regular
               }}>More Reviews</Text>
             </View>
             <Text style={{
