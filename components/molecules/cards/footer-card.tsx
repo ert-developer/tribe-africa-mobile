@@ -42,6 +42,7 @@ const FooterCard = ({
             style={{
                 color: theme.colors.light,
                 fontSize: theme.fonts.fontSize.small,
+                fontFamily: theme.fonts.poppins.regular,
                 textAlign: 'center'
             }}
         >

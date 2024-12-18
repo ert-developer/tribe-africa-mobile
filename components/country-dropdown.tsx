@@ -91,10 +91,9 @@ import React, { useEffect, useState } from 'react';
       borderRadius: theme.borderRadius.small
     },
     placeholderStyle: {
-      fontSize: theme.fonts.fontSize.medium,
     },
     selectedTextStyle: {
-      fontSize: theme.fonts.fontSize.medium,
+      fontFamily: theme.fonts.poppins.regular,
       marginLeft: theme.spacing.small,
     },
     iconStyle: {
