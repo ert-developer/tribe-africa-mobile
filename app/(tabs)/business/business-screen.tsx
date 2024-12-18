@@ -1,6 +1,7 @@
 import CustomButton from "@/components/atoms/button/button";
 import Card from "@/components/atoms/card/card";
 import CustomHeading from "@/components/atoms/heading/heading";
+import CountryDropdown from "@/components/country-dropdown";
 import FooterCard from "@/components/molecules/cards/footer-card";
 import SegmentedControl from "@/components/segmented-control";
 import { appStyles } from "@/constants/styles";
@@ -33,6 +34,7 @@ const BusinessScreen = ({props}) => {
   const screenWidth = Dimensions.get('window').width;
   return (
     <ScrollView style={[appStyles.screen]}>
+      <CountryDropdown action={(country) => {}}/>
       <SegmentedControl segments={segments}>
         {/* Landing content */}
         <View
