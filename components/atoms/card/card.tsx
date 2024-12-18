@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({ data, onPress, cardStyle={}, imageContainer
       <View
         style={[textContainerStyle, styles.textContainer]}
       >
-        <Text style={titleStyle}>{data.title}</Text>
+        <Text style={[styles.title, titleStyle]}>{data.title}</Text>
         { data.description && 
           <Text 
             style={[styles.description, descriptionStyle]} 
@@ -56,8 +56,10 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   title: {
+    fontFamily: theme.fonts.poppins.regular,
   },
   description: {
+    fontFamily: theme.fonts.poppins.regular,
     flexShrink: 1
   }
 });
