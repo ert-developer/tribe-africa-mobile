@@ -8,6 +8,7 @@ import {appStyles} from '@/constants/styles';
 import Carousel from "@/components/carousel";
 import CustomButton from "@/components/atoms/button/button";
 import SegmentedControl from "@/components/segmented-control";
+import FooterCard from "@/components/molecules/cards/footer-card";
 
 export default function HomeScreen({props}) {
     const screenWidth = Dimensions.get('window').width;
@@ -234,46 +235,12 @@ export default function HomeScreen({props}) {
                     )}
                     keyExtractor={item => item._id}
                 />
-                <View
-                    style={{
-                        backgroundColor: theme.colors.dark,
-                        borderWidth: 1/2,
-                        borderColor: theme.colors.primary,
-                        borderRadius: theme.borderRadius.small,
-                        padding: theme.spacing.extraLarge,
-                        margin: theme.spacing.small,
-                        marginTop: theme.spacing.medium,
-                        gap: theme.spacing.medium
-                    }}
-                >
-                    <Text
-                        style={{
-                            color: theme.colors.light,
-                            fontSize: theme.fonts.fontSize.medium,
-                            fontFamily: theme.fonts.poppins.semiBold,
-                        }}
-                    >
-                        Want to List your business on Tribe Africa pages?
-                    </Text>
-                    <Text
-                        style={{
-                            color: theme.colors.light,
-                            fontSize: theme.fonts.fontSize.small,
-                            textAlign: 'center'
-                        }}
-                    >
-                        List your business and get massive traffic !
-                    </Text>
-                    <CustomButton
-                        onPress={() => {}}
-                        style={{
-                            marginHorizontal: 'auto',
-                            marginTop: theme.spacing.medium,
-                        }}
-                    >
-                        List your business
-                    </CustomButton>
-                </View>
+                <FooterCard
+                    title="Want to List your business on Tribe Africa pages?"
+                    subTitle="List your business and get massive traffic !"
+                    buttonPlaceholder="List your business"
+                    buttonAction={() => {}}
+                />
             </View>
         </SegmentedControl>
     </ScrollView>
