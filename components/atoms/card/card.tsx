@@ -7,7 +7,7 @@ export interface CardProps {
   data: {
     _id: string,
     image: string;
-    title: string;
+    title?: string;
     description?: string;
   },
   onPress: () => void;

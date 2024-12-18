@@ -21,7 +21,7 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   button: {
-    padding: theme.spacing.small,
+    padding: theme.spacing.extraSmall,
     paddingHorizontal: theme.spacing.medium,
     backgroundColor: theme.colors.primary,
     borderRadius: theme.borderRadius.small,
