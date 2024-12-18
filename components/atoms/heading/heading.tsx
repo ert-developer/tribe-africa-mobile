@@ -65,6 +65,7 @@ export default CustomHeading;
 
 const styles = StyleSheet.create({
   title: {
+    fontFamily: fonts.poppins.regular,
     fontSize: fonts.fontSize.large,
     flex: 1,
     alignSelf: 'flex-start',
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
     color: theme.colors.primary,
   },
   description: {
+    fontFamily: fonts.poppins.regular,
     fontSize: fonts.fontSize.small,
   },
   button: {

@@ -24,6 +24,9 @@ export default function TabLayout() {
                 borderRadius: 10,
                 overflow: 'hidden',
             },
+            tabBarLabelStyle: {
+                fontFamily: theme.fonts.poppins.regular
+            },
             tabBarActiveTintColor: theme.colors.primary,
             headerLeft: () => (
             <View
