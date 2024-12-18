@@ -1,11 +1,12 @@
 import CustomButton from "@/components/atoms/button/button";
 import Card from "@/components/atoms/card/card";
 import CustomHeading from "@/components/atoms/heading/heading";
+import FooterCard from "@/components/molecules/cards/footer-card";
 import SegmentedControl from "@/components/segmented-control";
 import { appStyles } from "@/constants/styles";
 import { theme } from "@/constants/theme";
 import React from "react"
-import { ImageBackground, Image, ScrollView, StyleSheet, Text, View, Dimensions } from "react-native";
+import { ImageBackground, Image, ScrollView, StyleSheet, Text, View, Dimensions, FlatList } from "react-native";
 
 const eventsList = [
   {
@@ -72,7 +73,7 @@ const BusinessScreen = ({props}) => {
             paddingVertical: theme.spacing.medium,
             borderWidth: 1,
             borderColor: theme.colors.primary,
-            borderRadius: theme.borderRadius.medium
+            borderRadius: theme.borderRadius.small
           }]}
         >
           <CustomHeading>
@@ -101,7 +102,7 @@ const BusinessScreen = ({props}) => {
           style={[ appStyles.section, {
             padding: theme.spacing.small,
             paddingVertical: theme.spacing.medium,
-            borderRadius: theme.borderRadius.medium,
+            borderRadius: theme.borderRadius.small,
             backgroundColor: theme.colors.secondary,
           }]}
         >
@@ -156,7 +157,7 @@ const BusinessScreen = ({props}) => {
           <View style={[appStyles.section, {
             borderWidth: 1,
             borderColor: theme.colors.light,
-            borderRadius: theme.borderRadius.medium,
+            borderRadius: theme.borderRadius.small,
             padding: theme.spacing.small
           }]}>
             <View style={{
@@ -186,7 +187,7 @@ const BusinessScreen = ({props}) => {
             paddingVertical: theme.spacing.medium,
             borderWidth: 1,
             borderColor: theme.colors.primary,
-            borderRadius: theme.borderRadius.medium
+            borderRadius: theme.borderRadius.small
           }]}
         >
           <CustomHeading>
@@ -235,6 +236,43 @@ const BusinessScreen = ({props}) => {
               />
             ))}
           </View>
+        </View>
+
+        {/* Professional services */}
+        <View style={[appStyles.section]}>
+        <CustomHeading>
+            <View style={[appStyles.rowContainer]}>
+              <CustomHeading.Title>
+                Professional *Services*
+              </CustomHeading.Title>
+              <CustomHeading.Button onPress={() => {}}>
+                Advertise Your Business
+              </CustomHeading.Button>
+            </View>
+          </CustomHeading>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={eventsList}
+            contentContainerStyle={[{
+              gap: theme.spacing.small
+            }]}
+            renderItem={(data) => (
+              <Card
+                data={data.item}
+                cardStyle={{
+                  width: screenWidth/2 - 2 * theme.spacing.small
+                }}
+                onPress={() => {}}
+              />
+            )}
+          />
+          <FooterCard
+            title="Want to List your business on Tribe Africa pages?"
+            subTitle="List your business and get massive traffic !"
+            buttonPlaceholder="List your business"
+            buttonAction={() => {}}
+          />
         </View>
       </SegmentedControl>
     </ScrollView>
