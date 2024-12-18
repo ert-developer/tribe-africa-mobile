@@ -122,7 +122,7 @@ export default function HomeScreen({props}) {
                                 width: '60%'
                             }}
                             titleStyle={{
-                                fontWeight: 'bold',
+                                fontFamily: theme.fonts.poppins.semiBold,
                             }}
                             descriptionStyle={{
                             flexWrap: 'wrap', 
@@ -228,7 +228,7 @@ export default function HomeScreen({props}) {
                                 borderRadius: 0,
                                 aspectRatio: undefined
                             }}
-                            titleStyle={{fontFamily: theme.fonts.poppins.bold}}
+                            titleStyle={{fontFamily: theme.fonts.poppins.semiBold}}
                             descriptionStyle={{fontSize: theme.fonts.fontSize.small}}
                             onPress={() => {}}
                         />
