@@ -17,7 +17,7 @@ interface CustomButtonProps {
 }
 
 const CustomHeading: React.FC<CustomHeadingProps> & {
-  Title: React.FC<{ children: string }>;
+  Title: React.FC<{ children: string; style?: object }>;
   Description: React.FC<{ children: string }>;
   Button: React.FC<CustomButtonProps>;
 } = ({ children, style }) => {
@@ -29,11 +29,11 @@ const CustomHeading: React.FC<CustomHeadingProps> & {
 };
 
 // Title component - Handles the highlighting logic for the title text
-CustomHeading.Title = ({ children }: { children: string }) => {
+CustomHeading.Title = ({ children, style }: { children: string; style?: object }) => {
   const parts = children.split('*');
 
   return (
-    <Text style={styles.title}>
+    <Text style={[styles.title, style]}>
       {parts.map((part, index) => (
         <Text key={index} style={index % 2 === 1 ? styles.highlightedText : undefined}>
           {part}
@@ -70,7 +70,6 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: fonts.fontSize.small,
-    color: theme.colors.secondary,
   },
   button: {
     alignSelf: 'flex-start',
