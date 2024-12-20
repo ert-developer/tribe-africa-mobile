@@ -112,4 +112,5 @@ export default function TabLayout() {
 const ignore = [
     "home/home-screen",
     "business/business-screen",
+    "holiday/holiday-screen",
 ]
