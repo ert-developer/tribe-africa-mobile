@@ -34,6 +34,7 @@ const FooterCard = ({
                 color: theme.colors.light,
                 fontSize: theme.fonts.fontSize.medium,
                 fontFamily: theme.fonts.poppins.semiBold,
+                textAlign: 'center'
             }}
         >
             {title}
