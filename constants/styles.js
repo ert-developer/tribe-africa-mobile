@@ -7,12 +7,16 @@ export const appStyles = StyleSheet.create({
         paddingHorizontal: theme.spacing.small,
     },
     section: {
-        marginVertical: theme.spacing.extraSmall
+        marginVertical: theme.spacing.small
     },
     rowContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: theme.spacing.small
-      },
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing.small
+    },
+    contentContainer: {
+      marginVertical: theme.spacing.extraSmall,
+      gap: theme.spacing.small,
+    },
 })

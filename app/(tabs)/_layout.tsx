@@ -12,7 +12,7 @@ export default function TabLayout() {
             headerTitleAlign: 'center',
             tabBarStyle: {
                 backgroundColor: theme.colors.secondary,
-                borderRadius: 10,
+                borderRadius: theme.spacing.small,
                 height: 75,
                 paddingHorizontal: theme.spacing.small,
                 margin: theme.spacing.small
@@ -21,7 +21,7 @@ export default function TabLayout() {
             tabBarItemStyle: {
                 margin: theme.spacing.extraSmall,
                 marginVertical: theme.spacing.small,
-                borderRadius: 10,
+                borderRadius: theme.spacing.small,
                 overflow: 'hidden',
             },
             tabBarLabelStyle: {
