@@ -65,7 +65,6 @@ export default function TabLayout() {
             <Tabs.Screen 
                 name="business/index" 
                 options={{ 
-                    headerShown: false,
                     tabBarLabel: 'Business',
                     tabBarIcon: ({focused}) => <Iconify icon={focused ? 'business' : 'business-outline'} />,
                 }}

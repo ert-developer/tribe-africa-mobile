@@ -22,7 +22,7 @@ interface CustomButtonProps {
 }
 
 const CustomHeading: React.FC<CustomHeadingProps> & {
-  Title: React.FC<{ children: string }>;
+  Title: React.FC<{ children: string; style?: object }>;
   Description: React.FC<{ children: string }>;
   Button: React.FC<CustomButtonProps>;
 } = ({ children, style }) => {
@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
   description: {
     fontFamily: fonts.poppins.regular,
     fontSize: fonts.fontSize.small,
-    color: theme.colors.secondary,
   },
   button: {
     alignSelf: 'flex-start',
